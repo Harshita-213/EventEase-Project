@@ -14,7 +14,7 @@ export default function App(){
   const [toast, setToast] = useState(null);
 
   useEffect(() => {
-    const socket = io('http://localhost:5000', { transports: ['websocket'] });
+    const socket = io('https://eventease-project-s94w.onrender.com', { transports: ['websocket'] });
     socket.on('event:created', (p) => setToast(`New event: ${p.title}`));
     socket.on('event:updated', (p) => setToast(`Updated: ${p.title}`));
     socket.on('event:deleted', () => setToast('An event was deleted'));
